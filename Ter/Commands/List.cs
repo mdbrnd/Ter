@@ -15,10 +15,16 @@ namespace Ter.Commands
 
         public void Execute(string[] args)
         {
+            bool hasAtt = false;
             foreach (var file in Utils.getFilesInDir(Utils.currentDir)) {
-                if (file.Attributes.HasFlag(FileAttributes.Directory)) {
-                    Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.Red, file.Name, Environment.NewLine);
-                } else {
+                hasAtt = false;
+                foreach (KeyValuePair<FileAttributes, ConsoleColor> item in Utils.colorDict) {
+                    if (file.Attributes.HasFlag(item.Key)) {
+                        Utils.Write(bgColor: ConsoleColor.Black, item.Value, file.Name, Environment.NewLine);
+                        hasAtt = true;
+                    }
+                }
+                if (!hasAtt) {
                     Console.WriteLine(file.Name);
                 }
             }

@@ -16,7 +16,7 @@ namespace Ter.Commands
         public void Execute(string[] args)
         {
             if (args != Array.Empty<string>()) {
-                string dir = args[0];
+                string dir = string.Join(" ", args);
 
                 bool isSubdirectory = false;
 

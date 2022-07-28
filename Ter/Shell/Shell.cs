@@ -10,7 +10,7 @@ namespace Ter.Shell
 {
     internal static class Shell
     {
-        // TODO: multiple names, print file contents, color map for FileAttributes enum, don't split every space for cd because otherwise you cant access folder with spaces in them, add autosuggest with tab
+        // TODO: multiple names for commands, print file contents, add autosuggest with tab
         public static void Run()
         {
             string? input = "";

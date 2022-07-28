@@ -21,6 +21,12 @@ namespace Ter.UtilsNS
         public static string currentDir = Directory.GetCurrentDirectory();
         public static string user = Environment.UserName;
 
+        public static Dictionary<FileAttributes, ConsoleColor> colorDict = new Dictionary<FileAttributes, ConsoleColor>() {
+            { FileAttributes.Directory, ConsoleColor.Green },
+            { FileAttributes.Hidden, ConsoleColor.Yellow },
+            { FileAttributes.Compressed, ConsoleColor.Magenta }
+        };
+
         /// <summary>
         /// Writes to console with a background color and switchable foreground colors. Example usage: Write(bgColor: ConsoleColor.Blue, ConsoleColor.Red, "RED ", ConsoleColor.Green, "GREEN ", null, "RESET/WHITE")
         /// </summary>
