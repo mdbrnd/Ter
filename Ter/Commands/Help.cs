@@ -11,10 +11,12 @@ namespace Ter.Commands
     {
         public string Name => "help";
         public string Docs => "Usage: help <command_name>";
-        public void Execute(string?[] args)
+        public void Execute(string[] args)
         {
-            if (!Utils.IsNullOrEmpty(args))
+            if (args != Array.Empty<string>())
             {
+                Console.WriteLine("Args: " + args[0]);
+
                 ICommand? cmd = Utils.GetCommand(args[0]);
                 if (cmd != null)
                 {

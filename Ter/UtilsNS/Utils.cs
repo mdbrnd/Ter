@@ -19,10 +19,7 @@ namespace Ter.UtilsNS
                         .ToDictionary(command => command.Name, StringComparer.InvariantCulture);
 
         public static string currentDir = Directory.GetCurrentDirectory();
-
         public static string user = Environment.UserName;
-
-        public static string[] typingHistory = Array.Empty<string>();
 
         /// <summary>
         /// Writes to console with a background color and switchable foreground colors. Example usage: Write(bgColor: ConsoleColor.Blue, ConsoleColor.Red, "RED ", ConsoleColor.Green, "GREEN ", null, "RESET/WHITE")
@@ -57,18 +54,16 @@ namespace Ter.UtilsNS
             return null;
         }
 
-        public static string?[] GetArgs(string line)
+        public static string[] GetArgs(string line)
         {
             return line.Trim().Split(" ").Skip(1).ToArray();
         }
 
-        // Why the <>, why isnt passing a type of array not enough: public static bool IsNullOrEmpty(T[] array)
-        public static bool IsNullOrEmpty<T>(T[] array)
+        public static FileSystemInfo[] getFilesInDir(string pathToDir)
         {
-            if (array == null || array.Length == 0)
-                return true;
-            else
-                return array.All(item => item == null);
+            DirectoryInfo dir = new DirectoryInfo(pathToDir);
+            FileSystemInfo[] files = dir.GetFileSystemInfos();
+            return files;
         }
     }
 }

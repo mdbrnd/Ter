@@ -10,6 +10,6 @@ namespace Ter.Commands
     {
         string Name { get; }
         string Docs { get; }
-        void Execute(string?[] args);
+        void Execute(string[] args);
     }
 }

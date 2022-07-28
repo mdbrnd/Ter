@@ -23,13 +23,13 @@ namespace Ter.Shell
                     continue;
                 }
 
-                input.Trim().ToLower();
-                ICommand? command = Utils.GetCommand(input);
+                input.Trim();
+                ICommand? command = Utils.GetCommand(input.ToLower());
 
                 if (command != null) {
                     command.Execute(Utils.GetArgs(input));
                 } else {
-                    Console.WriteLine($"Command not found: {input.Split(" ").First()}");
+                    Console.WriteLine($"Command not found: {input.Split(" ").First()}" + Environment.NewLine);
                 }
             }
         }

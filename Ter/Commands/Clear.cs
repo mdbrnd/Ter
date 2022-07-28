@@ -11,7 +11,7 @@ namespace Ter.Commands {
 
         public string Docs => "Usage: clear";
 
-        public void Execute(string?[] args)
+        public void Execute(string[] args)
         {
             Console.Clear();
         }
