@@ -21,7 +21,7 @@ namespace Ter.Commands
                 bool isSubdirectory = false;
 
                 // First check if dir exists inside of current dir then check if exists on whole pc
-                foreach (var file in Utils.getFilesInDir(Utils.currentDir)) {
+                foreach (var file in Utils.GetFilesInDir(Utils.currentDir)) {
                     if (file.Attributes.HasFlag(FileAttributes.Directory)) {
                         if (file.Name == dir) {
                             isSubdirectory = true;

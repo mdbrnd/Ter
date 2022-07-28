@@ -16,7 +16,7 @@ namespace Ter.Commands
         public void Execute(string[] args)
         {
             bool hasAtt = false;
-            foreach (var file in Utils.getFilesInDir(Utils.currentDir)) {
+            foreach (var file in Utils.GetFilesInDir(Utils.currentDir)) {
                 hasAtt = false;
                 foreach (KeyValuePair<FileAttributes, ConsoleColor> item in Utils.colorDict) {
                     if (file.Attributes.HasFlag(item.Key)) {

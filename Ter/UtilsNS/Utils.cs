@@ -65,11 +65,37 @@ namespace Ter.UtilsNS
             return line.Trim().Split(" ").Skip(1).ToArray();
         }
 
-        public static FileSystemInfo[] getFilesInDir(string pathToDir)
+        public static FileSystemInfo[] GetFilesInDir(string pathToDir)
         {
             DirectoryInfo dir = new DirectoryInfo(pathToDir);
             FileSystemInfo[] files = dir.GetFileSystemInfos();
             return files;
+        }
+
+        /// <summary>
+        /// Returns whether a file exists in a given directory. A FileAttribute can be optionally passed to for example check whether a folder with a given name exists.
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="dir"></param>
+        /// <param name="attribute"></param>
+        /// <returns></returns>
+        public static bool FileExistsInDir(string filename, string dir, FileAttributes? attribute = null)
+        {
+            if (attribute == null) {
+                foreach (var file in GetFilesInDir(dir)) {
+                    if (file.Name == filename) {
+                        return true;
+                    }
+                }
+                return false;
+            } else {
+                foreach (var file in GetFilesInDir(dir)) {
+                    if (file.Name == filename && file.Attributes.HasFlag(attribute)) {
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
     }
 }
