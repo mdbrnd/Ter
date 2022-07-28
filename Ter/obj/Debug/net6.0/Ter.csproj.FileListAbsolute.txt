@@ -1,0 +1,15 @@
+C:\Coding\VS22 Programs\Ter\Ter\bin\Debug\net6.0\Ter.exe
+C:\Coding\VS22 Programs\Ter\Ter\bin\Debug\net6.0\Ter.deps.json
+C:\Coding\VS22 Programs\Ter\Ter\bin\Debug\net6.0\Ter.runtimeconfig.json
+C:\Coding\VS22 Programs\Ter\Ter\bin\Debug\net6.0\Ter.dll
+C:\Coding\VS22 Programs\Ter\Ter\bin\Debug\net6.0\Ter.pdb
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net6.0\Ter.csproj.AssemblyReference.cache
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net6.0\Ter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net6.0\Ter.AssemblyInfoInputs.cache
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net6.0\Ter.AssemblyInfo.cs
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net6.0\Ter.csproj.CoreCompileInputs.cache
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net6.0\Ter.dll
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net6.0\refint\Ter.dll
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net6.0\Ter.pdb
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net6.0\Ter.genruntimeconfig.cache
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net6.0\ref\Ter.dll

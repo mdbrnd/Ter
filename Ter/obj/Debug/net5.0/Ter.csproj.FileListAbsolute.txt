@@ -1,0 +1,5 @@
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net5.0\Ter.csproj.AssemblyReference.cache
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net5.0\Ter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net5.0\Ter.AssemblyInfoInputs.cache
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net5.0\Ter.AssemblyInfo.cs
+C:\Coding\VS22 Programs\Ter\Ter\obj\Debug\net5.0\Ter.csproj.CoreCompileInputs.cache
