@@ -16,34 +16,32 @@ namespace Ter.Commands
         public void Execute(string[] args)
         {
             if (args != Array.Empty<string>()) {
-                Console.WriteLine("Args: " + args[0]);
-
                 string dir = args[0];
-                if (dir == "..") {
-                    DirectoryInfo? parent = Directory.GetParent(Utils.currentDir);
-                    if (parent != null) {
-                        Utils.currentDir = parent.FullName;
-                    }
-                } else {
-                    bool hasFoundSubdir = false;
 
-                    // First check if dir exists inside of current dir then check if exists on whole pc
-                    foreach (var file in Utils.getFilesInDir(Utils.currentDir)) {
-                        if (file.Attributes.HasFlag(FileAttributes.Directory)) {
-                            if (file.Name == dir) {
-                                hasFoundSubdir = true;
+                bool isSubdirectory = false;
+
+                // First check if dir exists inside of current dir then check if exists on whole pc
+                foreach (var file in Utils.getFilesInDir(Utils.currentDir)) {
+                    if (file.Attributes.HasFlag(FileAttributes.Directory)) {
+                        if (file.Name == dir) {
+                            isSubdirectory = true;
+                            if (Utils.currentDir.EndsWith('\\')) {
+                                Utils.currentDir += dir;
+                            } else {
                                 Utils.currentDir += "\\" + dir;
                             }
                         }
                     }
-                    if (!hasFoundSubdir) {
-                        if (Directory.Exists(dir)) {
-                            Utils.currentDir = dir;
-                        } else {
-                            Console.WriteLine("Invalid directory " + dir);
-                        }
+                }
+                if (!isSubdirectory) {
+                    if (Directory.Exists(dir)) {
+                        Utils.currentDir = dir;
+                    } else {
+                        Console.WriteLine("No such directory: " + dir);
+                        Console.WriteLine();
                     }
                 }
+                
             } else {
                 Console.WriteLine("Invalid usage" + Environment.NewLine + Docs + Environment.NewLine);
             }

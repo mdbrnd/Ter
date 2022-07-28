@@ -15,8 +15,6 @@ namespace Ter.Commands
         {
             if (args != Array.Empty<string>())
             {
-                Console.WriteLine("Args: " + args[0]);
-
                 ICommand? cmd = Utils.GetCommand(args[0]);
                 if (cmd != null)
                 {
