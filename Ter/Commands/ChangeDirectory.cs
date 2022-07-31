@@ -11,9 +11,9 @@ namespace Ter.Commands
     {
         public string Name => "cd";
 
-        public string Docs => "Usage: cd <directory>";
+        public string Docs => "Changes the current directory to the given directory";
 
-        public string Usage => throw new NotImplementedException();
+        public string Usage => "Usage: cd <directory>";
 
         public void Execute(string[] args)
         {
@@ -46,7 +46,8 @@ namespace Ter.Commands
                 }
                 
             } else {
-                Console.WriteLine("Invalid usage" + Environment.NewLine + Docs + Environment.NewLine);
+                Console.WriteLine(Usage + Environment.NewLine + Docs);
+                Console.WriteLine();
             }
         }
     }

@@ -11,9 +11,19 @@ namespace Ter.Commands
     {
         public string Name => "help";
 
-        public string Docs => "Usage: help <command_name>";
+        //public string Docs => "Gets the docs of any command. \nAvailable commands: \n";
+        public string Docs
+        {
+            get {
+                string docs = "Available commands: \n";
+                foreach (var command in Utils._Commands) {
+                    docs += command.Key + Environment.NewLine;
+                }
+                return docs; 
+            }
+        }
 
-        public string Usage => throw new NotImplementedException();
+        public string Usage => "Usage: help <command_name>";
 
         public void Execute(string[] args)
         {
@@ -22,16 +32,16 @@ namespace Ter.Commands
                 ICommand? cmd = Utils.GetCommand(args[0]);
                 if (cmd != null)
                 {
-                    Console.WriteLine(cmd.Docs);
-                    Console.WriteLine();
+                    Console.WriteLine(cmd.Usage + Environment.NewLine + cmd.Docs);
                 } else {
-                    Console.WriteLine("Invalid command: " + args[0]);
-                    Console.WriteLine();
+                    Console.WriteLine("Invalid command: " + args[0] + Environment.NewLine + Docs);
                 }
             } else {
-                Console.WriteLine("Invalid usage of " + Name + Environment.NewLine + Docs);
-                Console.WriteLine();
+                Console.WriteLine(Usage + Environment.NewLine + Docs);
             }
+
+            Console.WriteLine();
+
         }
     }
 }

@@ -11,9 +11,9 @@ namespace Ter.Commands
     {
         public string Name => "ls";
 
-        public string Docs => "Usage: ls";
+        public string Docs => "List all files in the current directory";
 
-        public string Usage => throw new NotImplementedException();
+        public string Usage => "Usage: ls";
 
         public void Execute(string[] args)
         {

@@ -11,9 +11,9 @@ namespace Ter.Commands
     {
         public string Name => "cd..";
 
-        public string Docs => "Usage: cd..";
+        public string Docs => "Sets the current directory to the parent directory";
 
-        public string Usage => throw new NotImplementedException();
+        public string Usage => "Usage: cd..";
 
         public void Execute(string[] args)
         {

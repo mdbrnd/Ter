@@ -12,9 +12,9 @@ namespace Ter.Commands.Files
     {
         public string Name => "rd";
 
-        public string Docs => "Usage: read <filename>";
+        public string Docs => "Reads a file and prints its contents";
 
-        public string Usage => throw new NotImplementedException();
+        public string Usage => "Usage: read <filename>";
 
         public void Execute(string[] args)
         {
@@ -56,7 +56,7 @@ namespace Ter.Commands.Files
                     }
                 }
             } else {
-                Console.WriteLine("Invalid usage" + Environment.NewLine + Docs);
+                Console.WriteLine(Usage + Environment.NewLine + Docs);
             }
 
             Console.WriteLine();

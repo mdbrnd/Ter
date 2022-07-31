@@ -11,9 +11,9 @@ namespace Ter.Commands
     {
         public string Name => "exit";
 
-        public string Docs => "Usage: exit";
+        public string Docs => "Exits out of the program";
 
-        public string Usage => throw new NotImplementedException();
+        public string Usage => "Usage: exit";
 
         public void Execute(string[] args) {
             Environment.Exit(0);

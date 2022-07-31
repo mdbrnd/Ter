@@ -12,9 +12,9 @@ namespace Ter.Commands.Files
     {
         public string Name => "create";
 
-        public string Docs => "Usage: create <filename>";
+        public string Docs => "Creates a file";
 
-        public string Usage => throw new NotImplementedException();
+        public string Usage => "Usage: create <filename>";
 
         public void Execute(string[] args)
         {
@@ -48,7 +48,7 @@ namespace Ter.Commands.Files
                 }
 
             } else {
-                Console.WriteLine("Invalid usage" + Environment.NewLine + Docs);
+                Console.WriteLine(Usage + Environment.NewLine + Docs);
             }
 
             Console.WriteLine();

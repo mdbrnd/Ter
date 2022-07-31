@@ -10,9 +10,9 @@ namespace Ter.Commands.Files
     {
         public string Name => "del";
 
-        public string Docs => "Usage: del <filename>";
+        public string Docs => "Deletes a file";
 
-        public string Usage => throw new NotImplementedException();
+        public string Usage => "Usage: del <filename>";
 
         public void Execute(string[] args)
         {

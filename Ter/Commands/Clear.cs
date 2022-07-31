@@ -10,9 +10,9 @@ namespace Ter.Commands
     {
         public string Name => "clear";
 
-        public string Docs => "Usage: clear";
+        public string Docs => "Clears the console";
 
-        public string Usage => throw new NotImplementedException();
+        public string Usage => "Usage: clear";
 
         public void Execute(string[] args)
         {
