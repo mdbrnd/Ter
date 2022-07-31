@@ -14,6 +14,8 @@ namespace Ter.Commands.Files
 
         public string Docs => "Usage: read <filename>";
 
+        public string Usage => throw new NotImplementedException();
+
         public void Execute(string[] args)
         {
             if (args != Array.Empty<string>()) {

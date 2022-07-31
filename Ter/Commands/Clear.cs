@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ter.Commands {
+namespace Ter.Commands 
+{
     internal class Clear : ICommand
     {
         public string Name => "clear";
 
         public string Docs => "Usage: clear";
+
+        public string Usage => throw new NotImplementedException();
 
         public void Execute(string[] args)
         {

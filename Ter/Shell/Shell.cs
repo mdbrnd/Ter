@@ -10,14 +10,14 @@ namespace Ter.Shell
 {
     internal static class Shell
     {
-        // TODO: multiple names for commands, print file contents, add autosuggest with tab
+        // TODO: multiple names for commands, add autosuggest with tab, advanced ls, delete file
         public static void Run()
         {
             string? input = "";
 
-            while (input != "exit")
+            while (true)
             {
-                Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.DarkGray, Utils.currentDir, "> ");
+                Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.Green, Utils.user + "@" + Utils.machineName + ":", ConsoleColor.DarkGray, Utils.currentDir, "> ");
                 input = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(input)) {

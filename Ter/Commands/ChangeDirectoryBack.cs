@@ -13,6 +13,8 @@ namespace Ter.Commands
 
         public string Docs => "Usage: cd..";
 
+        public string Usage => throw new NotImplementedException();
+
         public void Execute(string[] args)
         {
             DirectoryInfo? parent = Directory.GetParent(Utils.currentDir);

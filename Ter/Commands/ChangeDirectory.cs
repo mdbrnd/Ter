@@ -13,6 +13,8 @@ namespace Ter.Commands
 
         public string Docs => "Usage: cd <directory>";
 
+        public string Usage => throw new NotImplementedException();
+
         public void Execute(string[] args)
         {
             if (args != Array.Empty<string>()) {
@@ -33,6 +35,7 @@ namespace Ter.Commands
                         }
                     }
                 }
+
                 if (!isSubdirectory) {
                     if (Directory.Exists(dir)) {
                         Utils.currentDir = dir;

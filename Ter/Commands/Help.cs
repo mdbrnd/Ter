@@ -10,7 +10,11 @@ namespace Ter.Commands
     internal class Help : ICommand
     {
         public string Name => "help";
+
         public string Docs => "Usage: help <command_name>";
+
+        public string Usage => throw new NotImplementedException();
+
         public void Execute(string[] args)
         {
             if (args != Array.Empty<string>())

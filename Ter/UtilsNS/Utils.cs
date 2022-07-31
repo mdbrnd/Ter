@@ -20,6 +20,7 @@ namespace Ter.UtilsNS
 
         public static string currentDir = Directory.GetCurrentDirectory();
         public static string user = Environment.UserName;
+        public static string machineName = Environment.MachineName;
 
         public static Dictionary<FileAttributes, ConsoleColor> colorDict = new Dictionary<FileAttributes, ConsoleColor>() {
             { FileAttributes.Directory, ConsoleColor.Green },
@@ -47,6 +48,11 @@ namespace Ter.UtilsNS
             Console.ResetColor();
         }
 
+        /// <summary>
+        /// Gets a ICommand by a line input
+        /// </summary>
+        /// <param name="line"></param>
+        /// <returns>An ICommand that is null if no command was found</returns>
         public static ICommand? GetCommand(string line)
         {
             string command = line.Trim().Split(" ").First();
@@ -60,6 +66,12 @@ namespace Ter.UtilsNS
             return null;
         }
 
+
+        /// <summary>
+        /// Gets the args from a line input
+        /// </summary>
+        /// <param name="line"></param>
+        /// <returns>The args from a line expression. Array.Empty<> if args are empty</returns>
         public static string[] GetArgs(string line)
         {
             return line.Trim().Split(" ").Skip(1).ToArray();
@@ -78,7 +90,7 @@ namespace Ter.UtilsNS
         /// <param name="filename"></param>
         /// <param name="dir"></param>
         /// <param name="attribute"></param>
-        /// <returns></returns>
+        /// <returns>Whether a file exists in that directory or not</returns>
         public static bool FileExistsInDir(string filename, string dir, FileAttributes? attribute = null)
         {
             if (attribute == null) {

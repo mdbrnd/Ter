@@ -12,6 +12,8 @@ namespace Ter.Commands.Files
 
         public string Docs => "Usage: del <filename>";
 
+        public string Usage => throw new NotImplementedException();
+
         public void Execute(string[] args)
         {
             

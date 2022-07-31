@@ -9,7 +9,11 @@ namespace Ter.Commands
     internal interface ICommand
     {
         string Name { get; }
+
+        string Usage { get; }
+
         string Docs { get; }
+
         void Execute(string[] args);
     }
 }

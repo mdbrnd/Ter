@@ -13,6 +13,8 @@ namespace Ter.Commands
 
         public string Docs => "Usage: ls";
 
+        public string Usage => throw new NotImplementedException();
+
         public void Execute(string[] args)
         {
             bool hasAtt = false;
