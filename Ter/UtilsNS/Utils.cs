@@ -21,6 +21,11 @@ namespace Ter.UtilsNS
         public static string currentDir = Directory.GetCurrentDirectory();
         public static string user = Environment.UserName;
         public static string machineName = Environment.MachineName;
+        public static string username = user + "@" + machineName;
+        public static string arrow = "\ue0b0";
+        public static string semiCircleLeftFacing = "\ue0b6";
+        public static string semiCircleRightFacing = "\ue0b4";
+        public static string checkMark = "\uf00c";
 
         public static Dictionary<FileAttributes, ConsoleColor> colorDict = new Dictionary<FileAttributes, ConsoleColor>() {
             { FileAttributes.Directory, ConsoleColor.Green },

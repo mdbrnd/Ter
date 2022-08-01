@@ -10,14 +10,14 @@ namespace Ter.Shell
 {
     internal static class Shell
     {
-        // TODO: multiple names for commands, add autosuggest with tab, advanced ls, delete file
+        // TODO: multiple names for commands, add autosuggest with tab, advanced ls, delete file, figure out what to do with nerd font
         public static void Run()
         {
             string? input = "";
 
             while (true)
             {
-                Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.Green, Utils.user + "@" + Utils.machineName + ":", ConsoleColor.DarkGray, Utils.currentDir, "> ");
+                WriteCurrentDir();
                 input = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(input)) {
@@ -33,6 +33,17 @@ namespace Ter.Shell
                     Console.WriteLine($"Command not found: {input.Split(" ").First()}" + Environment.NewLine);
                 }
             }
+        }
+
+        public static void WriteCurrentDir()
+        {
+            Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.Green, Utils.semiCircleLeftFacing); // Semi circle
+            Utils.Write(bgColor: ConsoleColor.Green, "starfall@STARFALL" + " "); // Username and machine name
+            Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.Green, Utils.arrow); // Arrow
+            Utils.Write(bgColor: ConsoleColor.Gray, ConsoleColor.Black, Utils.arrow, ConsoleColor.White, " " + Utils.currentDir + " "); // Current dir and arrow
+            Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.Gray, Utils.arrow); // Arrow
+            Utils.Write(bgColor: ConsoleColor.Blue, ConsoleColor.Black, Utils.arrow, ConsoleColor.White, " " + Utils.checkMark + " "); // Check mark
+            Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.Blue, Utils.semiCircleRightFacing + " "); // Semi circle at the end
         }
     }
 }
