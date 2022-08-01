@@ -38,7 +38,7 @@ namespace Ter.Shell
         public static void WriteCurrentDir()
         {
             Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.Green, Utils.semiCircleLeftFacing); // Semi circle
-            Utils.Write(bgColor: ConsoleColor.Green, "starfall@STARFALL" + " "); // Username and machine name
+            Utils.Write(bgColor: ConsoleColor.Green, Utils.username + " "); // Username and machine name
             Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.Green, Utils.arrow); // Arrow
             Utils.Write(bgColor: ConsoleColor.Gray, ConsoleColor.Black, Utils.arrow, ConsoleColor.White, " " + Utils.currentDir + " "); // Current dir and arrow
             Utils.Write(bgColor: ConsoleColor.Black, ConsoleColor.Gray, Utils.arrow); // Arrow
